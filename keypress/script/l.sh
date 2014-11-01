@@ -1,0 +1,4 @@
+#!/bin/bash
+export DISPLAY=":0"
+XAUTHORITY=./.Xauthority
+xdotool key l
