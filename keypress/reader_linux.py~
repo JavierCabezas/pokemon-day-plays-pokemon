@@ -1,9 +1,0 @@
-from subprocess import call
-
-def press(key):
-    if key != 'speed':
-        call(['xdotool key '+key], shell=True)
-    else:
-        call(['xdotool key --delay 1000 i '], shell=True)
-
-subprocess.call(['./speed.sh'])

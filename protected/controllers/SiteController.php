@@ -124,11 +124,12 @@ class SiteController extends Controller
 			  case 'speed':
 			  		$args = 'speed.sh'; break;
 			}
-			$exec = Yii::getPathOfAlias('webroot').'/keypress/reader_linux.py '.$args;
-			echo $exec;
-			$output = shell_exec('python '.$exec);
+			$exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
+			$output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
+			echo $output." ";
 		}
 	}
+	
 	/**
 	 * This is the action to handle external exceptions.
 	 */
