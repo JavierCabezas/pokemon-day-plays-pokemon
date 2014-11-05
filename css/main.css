@@ -252,3 +252,8 @@ div.search-form
 .right { 
 	float:right; 
 } 
+
+.disabled
+{
+	color: red;
+}
