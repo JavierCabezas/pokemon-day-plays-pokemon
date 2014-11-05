@@ -51,6 +51,10 @@ return array(
 	),
 
 	'params'=>array(
-		'active_game'=>'gba',
+		'active_game' 	=>	'gba',
+		//All the following delays are for pressing button and are expressed in seconds.
+		'main_delay'	=> 	'1', 	//for main buttons (suck as a and b).
+		'start_delay'	=>  '10', 	//Delay for pressing the start button.
+		'speed_delay'	=> 	'2', 	//Speed button delay.
 	),
 );
