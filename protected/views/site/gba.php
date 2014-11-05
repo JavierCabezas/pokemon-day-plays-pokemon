@@ -50,15 +50,31 @@
 
 	</div>
   	<div class="right">
-		<p class="button" id="s"> v </p>
-		<p> &nbsp; </p>
-		<p class="button" id="w"> ^ </p>
-		<p> &nbsp; </p>
-		<p class="button" id="a"> -> </p>
-		<p> &nbsp; </p>
-		<p class="button" id="d"> <- </p>
-		<p> &nbsp; </p>
-		<p class="button" id="speed"> Speed </p>
+		<?php
+		echo CHtml::ajaxSubmitButton('up',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
+        	array('type'=>'POST','data'=> 'js:{"key": "w" }'), array('class'=>'small_btn' ));
+		?>
+
+		<?php
+		echo CHtml::ajaxSubmitButton('down',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
+        	array('type'=>'POST','data'=> 'js:{"key": "s" }'), array('class'=>'small_btn' ));
+		?>
+
+		<?php
+		echo CHtml::ajaxSubmitButton('left',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
+        	array('type'=>'POST','data'=> 'js:{"key": "a" }'), array('class'=>'small_btn' ));
+		?>
+
+		<?php
+		echo CHtml::ajaxSubmitButton('right',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
+        	array('type'=>'POST','data'=> 'js:{"key": "d" }'), array('class'=>'small_btn' ));
+		?>
+
+		<?php
+		echo CHtml::ajaxSubmitButton('speed',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
+        	array('type'=>'POST','data'=> 'js:{"key": "speed" }'), array('class'=>'small_btn' ));
+		?>
+
   	</div>
 </div>
 
