@@ -37,7 +37,7 @@ class SiteController extends Controller
                 'allow',
                 'actions' => array(
                     'play',
-                    //'ajaxSendCommand',
+                    'ajaxSendCommand',
                     'ajaxExcecuteCommand',
                 ),
                 'users' => array(

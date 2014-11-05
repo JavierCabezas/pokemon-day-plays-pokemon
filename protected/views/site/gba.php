@@ -18,58 +18,58 @@
 <div class="content">
  	<div class="left"> 	
  		<?php echo CHtml::ajaxSubmitButton('a',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	  array('type'=>'POST','data'=> 'js:{"key": "z" }'), array('class'=>'btn small_btn btn_main' ));
+        	  array('type'=>'POST','data'=> 'js:{"key": "z" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
 		<?php
 		echo CHtml::ajaxSubmitButton('b',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "x" }'), array('class'=>'btn small_btn btn_main' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "x" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
 		<?php
 		echo CHtml::ajaxSubmitButton('L',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "l" }'), array('class'=>'btn small_btn btn_main' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "l" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
 		<?php
 		echo CHtml::ajaxSubmitButton('R',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "r" }'), array('class'=>'btn small_btn btn_main' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "r" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 		
 		<?php
 		echo CHtml::ajaxSubmitButton('start',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "m" }'), array('class'=>'btn small_btn btn_start' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "m" }'), array('class'=>'btn small_btn btn_start' , 'onclick' => 'disable('.Yii::app()->params['start_delay'].')' ));
 		?>
 		
 		<?php
 		echo CHtml::ajaxSubmitButton('select',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "n" }'), array('class'=>'btn small_btn btn_default' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "n" }'), array('class'=>'btn small_btn btn_default' , 'onclick' => 'disable('.Yii::app()->params['default_delay'].')' ));
 		?>
 	</div>
   	<div class="right">
 		<?php
 		echo CHtml::ajaxSubmitButton('up',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "w" }'), array('class'=>'btn small_btn btn_main' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "w" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
 		<?php
 		echo CHtml::ajaxSubmitButton('down',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "s" }'), array('class'=>'btn small_btn btn_main' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "s" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
 		<?php
 		echo CHtml::ajaxSubmitButton('left',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "a" }'), array('class'=>'btn small_btn btn_main' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "a" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
 		<?php
 		echo CHtml::ajaxSubmitButton('right',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "d" }'), array('class'=>'btn small_btn btn_main' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "d" }'), array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
 		<?php
 		echo CHtml::ajaxSubmitButton('speed',Yii::app()->createUrl('site/ajaxExcecuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "speed" }'), array('class'=>'btn small_btn btn_speed' ));
+        	array('type'=>'POST','data'=> 'js:{"key": "speed" }'), array('class'=>'btn small_btn btn_speed', 'onclick' => 'disable('.Yii::app()->params['speed_delay'].')' ));
 		?>
   	</div>
 </div>
@@ -88,17 +88,4 @@ function disable(milliseconds){
         $(".btn").removeClass("disabled");
     }, milliseconds);
 }
-
-$('.btn_speed').click(function(){
-	disable(<?php echo  Yii::app()->params['speed_delay'] ?>)
-});
-
-$('.btn_main').click(function(){
-	disable(<?php echo  Yii::app()->params['main_delay'] ?>)
-});
-
-$('.btn_start').click(function(){
-	disable(<?php echo  Yii::app()->params['start_delay'] ?>)
-});
-
 </script>
