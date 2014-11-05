@@ -8,3 +8,10 @@ function sendKey($key){
 	socket_write($socket1, $key, strlen ($key)) or die("Could not write output\n");
 	socket_close($socket1);
 }
+?>
+
+<script>
+function mensaje(){
+	alert('holi');
+}
+</script>

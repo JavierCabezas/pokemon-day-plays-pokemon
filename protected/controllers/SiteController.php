@@ -28,6 +28,7 @@ class SiteController extends Controller
                     'logout',
                     'error',
                     'thanks',
+					'commands',
                 ),
                 'users' => array(
                     '*'
@@ -95,7 +96,6 @@ class SiteController extends Controller
 	{
 		if(isset($_POST['key'])){
 			$k = $_POST['key'];
-
 			switch ($k) {
 			  case 'z':
 			  		$args = 'z.sh'; break;
@@ -124,9 +124,11 @@ class SiteController extends Controller
 			  case 'speed':
 			  		$args = 'speed.sh'; break;
 			}
+
 			$exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
 			$output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
 			echo $output." ";
+		
 		}
 	}
 	
