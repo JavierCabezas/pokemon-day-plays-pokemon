@@ -8,10 +8,49 @@ function sendKey($key){
 	socket_write($socket1, $key, strlen ($key)) or die("Could not write output\n");
 	socket_close($socket1);
 }
-?>
 
-<script>
-function mensaje(){
-	alert('holi');
+/**
+ *	Gives the current time in the format hh:mm:ss
+ *	@return string the time.
+ */
+function currentTime(){
+	return date('h:m:s', time());
 }
-</script>
+
+/**
+ *	Returns the key (in words) that the player pressed.
+ *	@param string $key the key (in short form) that the player pressed (Ex: a, w, s, d)
+ *	@param string game the game that its being played
+ *	@return string the key in words (Ex: up, down, start, select, etc.). In case the key isn't a valid one it returns -1
+ */
+function translateKey($key, $game){
+	if($game == 'gba'){
+		switch ($key) {
+			case 'z':
+				return 'A';
+			case 'a':
+				return 'Left';
+			case 'd':
+				return 'Right';
+			case 'l':
+				return 'L';
+			case 'm':
+				return 'Start';
+			case 'n':
+				return 'Select';
+			case 'r':
+				return 'R';
+			case 's':
+				return 'Down';
+			case 'w':
+				return 'Up';
+			case 'x':
+				return 'B';
+			case 'speed':
+				return 'Speed';
+		}
+	}
+	return -1;
+}
+
+?>

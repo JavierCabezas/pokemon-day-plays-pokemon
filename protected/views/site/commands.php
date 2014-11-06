@@ -1,5 +1,12 @@
 <div class='commands'>
-	<ul>
-		<li class='commands' id='1'> </li>
+	<ul class='scroller'>
+		<?php foreach($commands as $command): ?>
+			<li> <?php echo $command->complete ?> </li>
+		<?php endforeach ?>
 	</ul>
 </div>
+
+
+<script type="text/javascript">
+  setTimeout(function () { location.reload(true); }, 3000);
+</script>

@@ -22,7 +22,7 @@ return array(
 			'ipFilters'=>array('127.0.0.1','::1'),
 		),
 	),
-
+	
 	// application components
 	'components'=>array(
         'booster' => array(
@@ -31,7 +31,13 @@ return array(
 		'user'=>array(
 			'allowAutoLogin'=>true,
 		),
-
+		'db'=>array(
+			'connectionString' => 'mysql:host=localhost;dbname=pp',
+			'emulatePrepare' => true,
+			'username' => 'root',
+			'password' => '',
+			'charset' => 'utf8',
+		),
 		'errorHandler'=>array(
 			'errorAction'=>'site/error',
 		),

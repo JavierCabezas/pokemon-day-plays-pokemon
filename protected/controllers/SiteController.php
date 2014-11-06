@@ -40,6 +40,7 @@ class SiteController extends Controller
                     'play',
                     'ajaxSendCommand',
                     'ajaxExcecuteCommand',
+                    'ajaxUpdateCommands',
                 ),
                 'users' => array(
                     '@'
@@ -92,10 +93,29 @@ class SiteController extends Controller
 		}
 	}
 
+	/**
+	 *	This function calls the script to exeggcute (hehe) the keypress command.
+	 *	It also saves a database entry with the given move. 
+	 */
 	public function actionAjaxExcecuteCommand()
 	{
+		$game 	= Yii::app()->params['active_game'];
+		
 		if(isset($_POST['key'])){
 			$k = $_POST['key'];
+
+			$key_in_words 	= translateKey($k, $game);
+			if($key_in_words == -1) break; //Just to be sure
+
+			$c 				= new Command();
+			$c->nick 		= Yii::app()->user->name;
+			$c->time 		= currentTime();
+			$c->game 		= $game;
+			$c->button 		= $key_in_words;
+			$c->ip 			= $_SERVER['REMOTE_ADDR'];
+			$c->save();
+
+
 			switch ($k) {
 			  case 'z':
 			  		$args = 'z.sh'; break;
@@ -125,9 +145,10 @@ class SiteController extends Controller
 			  		$args = 'speed.sh'; break;
 			}
 
-			$exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
-			$output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
-			echo $output." ";
+			//$exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
+			//$output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
+			//echo $output." ";
+		
 		
 		}
 	}
@@ -144,6 +165,14 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
+	}
+
+	public function actionCommands()
+	{
+		$commands = Command::model()->findAll(array("order" => "id DESC", "limit" => 50));
+		$this->render('commands', array(
+			'commands' => $commands
+		));
 	}
 
 	/**
@@ -174,5 +203,12 @@ class SiteController extends Controller
 	{
 		Yii::app()->user->logout();
 		$this->redirect(array('/site/thanks'));
+	}
+
+	public function actionAjaxUpdateCommands()
+	{
+		if(isset($_POST['key'], $_POST['nickname'], $_POST['time'])){
+
+		}
 	}
 }
