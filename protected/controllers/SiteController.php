@@ -41,6 +41,8 @@ class SiteController extends Controller
                     'ajaxSendCommand',
                     'ajaxExcecuteCommand',
                     'ajaxUpdateCommands',
+                    'ajaxUpdateCommands',
+                    'ajaxChangeStatus',
                 ),
                 'users' => array(
                     '@'
@@ -115,7 +117,6 @@ class SiteController extends Controller
 			$c->ip 			= $_SERVER['REMOTE_ADDR'];
 			$c->save();
 
-
 			switch ($k) {
 			  case 'z':
 			  		$args = 'z.sh'; break;
@@ -148,8 +149,6 @@ class SiteController extends Controller
 			//$exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
 			//$output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
 			//echo $output." ";
-		
-		
 		}
 	}
 	
@@ -165,14 +164,6 @@ class SiteController extends Controller
 			else
 				$this->render('error', $error);
 		}
-	}
-
-	public function actionCommands()
-	{
-		$commands = Command::model()->findAll(array("order" => "id DESC", "limit" => 50));
-		$this->render('commands', array(
-			'commands' => $commands
-		));
 	}
 
 	/**
@@ -205,10 +196,26 @@ class SiteController extends Controller
 		$this->redirect(array('/site/thanks'));
 	}
 
-	public function actionAjaxUpdateCommands()
-	{
-		if(isset($_POST['key'], $_POST['nickname'], $_POST['time'])){
 
-		}
+	/** 
+	 *	Renders the "commands" view. This view shows an scrollable list of the last commands and shows the countdown 
+	 *	between the anarchy and democracy modes.
+	 */
+	public function actionCommands()
+	{
+		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/countdown.js');
+		$this->render('commands');
+	}
+
+	/** 
+	 *	Shows the view of the last commands
+	 */
+	public function actionAjaxUpdateCommands(){
+		echo $this->renderPartial('_commands', array('commands' => Command::model()->findAll(array("order" => "id DESC", "limit" => 50)), true));
+	}
+
+	public function actionAjaxChangeStatus(){
+		$m = new SystemStatus();
+		$m->change_status();
 	}
 }

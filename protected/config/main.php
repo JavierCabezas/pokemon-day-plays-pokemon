@@ -1,5 +1,6 @@
 <?php
 Yii::setPathOfAlias('booster', dirname(__FILE__) . '/../extensions/booster');
+Yii::setPathOfAlias('mods', dirname(__FILE__) . '/../models');
 
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
@@ -41,6 +42,7 @@ return array(
 		'errorHandler'=>array(
 			'errorAction'=>'site/error',
 		),
+		'systemStatus' => array('class' => 'mods.SystemStatus'),
 		'log'=>array(
 			'class'=>'CLogRouter',
 			'routes'=>array(
@@ -63,5 +65,6 @@ return array(
 		'default_delay'	=> 	'3000',	//For everything else.
 		'start_delay'	=>  '10000', 	//Delay for pressing the start button.
 		'speed_delay'	=> 	'5000', 	//Speed button delay.
+		''
 	),
 );
