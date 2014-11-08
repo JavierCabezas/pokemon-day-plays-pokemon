@@ -28,7 +28,6 @@ class SiteController extends Controller
                     'logout',
                     'error',
                     'thanks',
-					'commands',
                 ),
                 'users' => array(
                     '*'
@@ -39,13 +38,23 @@ class SiteController extends Controller
                 'actions' => array(
                     'play',
                     'ajaxSendCommand',
-                    'ajaxExcecuteCommand',
-                    'ajaxUpdateCommands',
+                    'ajaxExeggcuteCommand',
                     'ajaxUpdateCommands',
                     'ajaxChangeStatus',
                 ),
                 'users' => array(
                     '@'
+                )
+            ),
+            array(
+                'allow',
+                'actions' => array(
+                    'ajaxUpdateCommands',
+                    'ajaxChangeStatus',
+                    'commands',
+                ),
+                'users' => array(
+                    'Javier'
                 )
             ),
             array('deny')
@@ -99,56 +108,21 @@ class SiteController extends Controller
 	 *	This function calls the script to exeggcute (hehe) the keypress command.
 	 *	It also saves a database entry with the given move. 
 	 */
-	public function actionAjaxExcecuteCommand()
+	public function actionAjaxExeggcuteCommand()
 	{
 		$game 	= Yii::app()->params['active_game'];
-		
-		if(isset($_POST['key'])){
-			$k = $_POST['key'];
+        if(isset($_POST['key'])) {
+            $k = $_POST['key'];
 
-			$key_in_words 	= translateKey($k, $game);
-			if($key_in_words == -1) break; //Just to be sure
+            $key_in_words = translateKey($k, $game);
+            if ($key_in_words == -1) return null; //Just to be sure
+            Command::model()->recordKeystroke($key_in_words);
 
-			$c 				= new Command();
-			$c->nick 		= Yii::app()->user->name;
-			$c->time 		= currentTime();
-			$c->game 		= $game;
-			$c->button 		= $key_in_words;
-			$c->ip 			= $_SERVER['REMOTE_ADDR'];
-			$c->save();
-
-			switch ($k) {
-			  case 'z':
-			  		$args = 'z.sh'; break;
-			  case 'a':
-			  		$args = 'a.sh'; break;
-			  case 'b':
-			  		$args = 'b.sh'; break;
-			  case 'd':
-			  		$args = 'd.sh'; break;
-			  case 'l':
-			  		$args = 'l.sh'; break;
-			  case 'm':
-			  		$args = 'm.sh'; break;
-			  case 'n':
-			  		$args = 'n.sh'; break;
-			  case 'r':
-			  		$args = 'r.sh'; break;
-			  case 's':
-			  		$args = 's.sh'; break;
-			  case 'w':
-			  		$args = 'w.sh'; break;
-			  case 'x':
-			  		$args = 'x.sh'; break;
-			  case 'z':
-			  		$args = 'z.sh'; break;
-			  case 'speed':
-			  		$args = 'speed.sh'; break;
-			}
-
-			//$exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
-			//$output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
-			//echo $output." ";
+            if(SystemStatus::model()->currentStatus == SystemStatus::ANARCHY) {
+                Command::model()->press($k);
+            }else{ //DEMOCRACY.
+                Command::model()->press($k);
+            }
 		}
 	}
 	
@@ -215,7 +189,7 @@ class SiteController extends Controller
 	}
 
 	public function actionAjaxChangeStatus(){
-		$m = new SystemStatus();
-		$m->change_status();
-	}
+        echo SystemStatus::model()->NextSystemStatus();
+		SystemStatus::model()->changeStatus();
+    }
 }

@@ -45,8 +45,7 @@ current_status = anarchy
 
 	function changeStatus(){
 		current_status = !current_status;
-		$(".modo").html('<?php $m = new SystemStatus(); echo $m->status_words() ?>');
-		alert('<?php $m = new SystemStatus(); echo $m->status_words() ?>');
+        var ajaxResponse;
 		$.ajax({
 				url: '<?php echo CController::createUrl("site/ajaxChangeStatus")  ?>',
 				dataType : 'html',
@@ -54,8 +53,9 @@ current_status = anarchy
 				type: 'POST',
 				'success': function(response) {
 					ajaxResponse = response;
-				},
+				}
 		});
+        $(".modo").html(ajaxResponse);
 	}
 
 	startClock();
@@ -70,7 +70,7 @@ current_status = anarchy
 				type: 'POST',
 				'success': function(response) {
 					ajaxResponse = response;
-				},
+				}
 			});
 			$(".scroller").html(ajaxResponse);
 		}, 3000);
