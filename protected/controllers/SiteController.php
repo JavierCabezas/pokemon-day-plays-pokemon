@@ -121,7 +121,7 @@ class SiteController extends Controller
             if(SystemStatus::model()->currentStatus == SystemStatus::ANARCHY) {
                 Command::model()->press($k);
             }else{ //DEMOCRACY.
-                Command::model()->press($k);
+            	
             }
 		}
 	}

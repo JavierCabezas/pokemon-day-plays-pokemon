@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15345729-6f48-4203-9b0c-0ed96843cdac" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Command.php" afterPath="$PROJECT_DIR$/protected/models/Command.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Democracy.php" afterPath="$PROJECT_DIR$/protected/models/Democracy.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/SiteController.php" afterPath="$PROJECT_DIR$/protected/controllers/SiteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/SystemStatus.php" afterPath="$PROJECT_DIR$/protected/models/SystemStatus.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/site/commands.php" afterPath="$PROJECT_DIR$/protected/views/site/commands.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/site/gba.php" afterPath="$PROJECT_DIR$/protected/views/site/gba.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/globals.php" afterPath="$PROJECT_DIR$/protected/globals.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="pokemon-day-plays-pokemon.iws" />
@@ -57,7 +56,7 @@
         <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-17.653847" vertical-offset="1632" max-vertical-offset="3400">
-              <caret line="123" column="44" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
+              <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -66,9 +65,15 @@
       <file leaf-file-name="commands.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/views/site/commands.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.923077" vertical-offset="510" max-vertical-offset="1445">
-              <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-              <folding />
+            <state vertical-scroll-proportion="-20.923077" vertical-offset="663" max-vertical-offset="1615">
+              <caret line="71" column="13" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+              <folding>
+                <marker date="1415491060847" expanded="true" signature="1504:1728" placeholder="{...}" />
+                <marker date="1415491060847" expanded="true" signature="1516:1694" placeholder="{...}" />
+                <marker date="1415491060847" expanded="true" signature="1568:1664" placeholder="{&quot;url&quot;: '&lt;?php echo CController::createUrl(&quot;site/ajaxUpdateCommands&quot;)  ?&gt;'...}" />
+                <marker date="1415491060847" expanded="true" signature="1663:1664" placeholder="{...}" />
+                <marker date="1415491060847" expanded="true" signature="1732:1735" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -298,7 +303,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -387,16 +392,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/site/commands.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.923077" vertical-offset="510" max-vertical-offset="1445">
-          <caret line="62" column="13" selection-start-line="62" selection-start-column="13" selection-end-line="62" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="-20.923077" vertical-offset="663" max-vertical-offset="1615">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="12" selection-end-line="71" selection-end-column="12" />
+          <folding>
+            <marker date="1415491060847" expanded="true" signature="1504:1728" placeholder="{...}" />
+            <marker date="1415491060847" expanded="true" signature="1516:1694" placeholder="{...}" />
+            <marker date="1415491060847" expanded="true" signature="1568:1664" placeholder="{&quot;url&quot;: '&lt;?php echo CController::createUrl(&quot;site/ajaxUpdateCommands&quot;)  ?&gt;'...}" />
+            <marker date="1415491060847" expanded="true" signature="1663:1664" placeholder="{...}" />
+            <marker date="1415491060847" expanded="true" signature="1732:1735" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/SiteController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.653847" vertical-offset="1632" max-vertical-offset="3400">
-          <caret line="123" column="44" selection-start-line="123" selection-start-column="44" selection-end-line="123" selection-end-column="44" />
+          <caret line="123" column="16" selection-start-line="123" selection-start-column="16" selection-end-line="123" selection-end-column="16" />
           <folding />
         </state>
       </provider>

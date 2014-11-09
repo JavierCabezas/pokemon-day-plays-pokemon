@@ -53,4 +53,12 @@ function translateKey($key, $game){
 	return -1;
 }
 
+/** 
+ *	Returns all the key codes of an specific game.
+ */
+function getKeys($game){
+	if($game == 'gba')
+		return array('z', 'a', 'd', 'l', 'm', 'n', 'r', 's', 'w', 'x', 'speed');
+}
+
 ?>

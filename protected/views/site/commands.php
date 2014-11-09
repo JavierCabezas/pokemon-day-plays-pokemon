@@ -33,7 +33,7 @@ current_status = anarchy
 	 */
 	function startClock(){
 		var currentDate = new Date();
-	 	$('div#clock').countdown(30*100*2 + currentDate.valueOf(), function(event) {
+	 	$('div#clock').countdown(5*1000 + currentDate.valueOf(), function(event) {
 		    $this = $(this);
 			switch(event.type) {
 				case "seconds":
@@ -60,6 +60,7 @@ current_status = anarchy
 
 	startClock();
 
+	//Show the command list in anarchy mode.
 	if(current_status == anarchy){
 		setInterval(function(){
 			var ajaxResponse;
@@ -77,4 +78,13 @@ current_status = anarchy
 	}else{
 		$(".scroller").html("");
 	}
+
+	//
+	setInterval(function () {
+		if(current_status == democracy){
+		
+		}
+    }, 10000);
+
+
 </script>

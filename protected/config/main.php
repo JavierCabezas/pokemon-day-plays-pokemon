@@ -59,12 +59,14 @@ return array(
 	),
 
 	'params'=>array(
-		'active_game' 	=>	'gba',
+		'active_game' 			=>	'gba',
 		//All the following delays are for pressing button and are expressed in milliseconds.
-		'main_delay'	=> 	'800', 	//for main buttons (suck as a and b).
-		'default_delay'	=> 	'3000',	//For everything else.
-		'start_delay'	=>  '10000', 	//Delay for pressing the start button.
-		'speed_delay'	=> 	'5000', 	//Speed button delay.
-		''
+		'main_delay'			=> 	'800', 		//For main buttons (suck as a and b).
+		'default_delay'			=> 	'3000',		//For everything else.
+		'start_delay'			=>  '10000', 	//Delay for pressing the start button.
+		'speed_delay'			=> 	'5000', 	//Speed button delay.
+		//Those two are in secons.
+		'time_per_democracy' 	=>	'8',
+		'democracy_per_status'	=>  '3', //Times that a democracy round goes per status change.
 	),
 );
