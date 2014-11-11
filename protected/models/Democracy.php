@@ -113,25 +113,9 @@ class Democracy extends CActiveRecord
 	 */
 	public function saveVote($key){
 		$d 					 = new Democracy();
-		$d->id_system_status = SystemStatus::model()->currentStatus();
+		$d->id_system_status = SystemStatus::model()->currentStatusModel()->id;
 		$d->iteration 		 = Democracy::model()->getCurrentIteration();
 		$d->keypress 		 = $key; 
 		$d->save();
-	}
-
-	/** 
-	 *	Finishes a democracy round and calculates the winner 
-	 */
-	public function finishRun(){
-		$votes = array();
-		$keys = getKeys(Yii::app()->params['active_game']);
-		foreach($keys as $key){
-			$votes[$key] = count(Democracy::model()->findAllByAttributes(array(
-				'id_system_status' => SystemStatus::model()->currentStatus(),
-				'iteration' 	   => Democracy::model()->getCurrentIteration(),
-				'keypress'		   => $key)));
-		}
-		$index_max = array_search(max($votes), $votes);
-		Command::model()->press($votes[$index_max]);
 	}
 }

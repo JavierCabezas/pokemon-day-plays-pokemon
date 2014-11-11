@@ -65,8 +65,7 @@ return array(
 		'default_delay'			=> 	'3000',		//For everything else.
 		'start_delay'			=>  '10000', 	//Delay for pressing the start button.
 		'speed_delay'			=> 	'5000', 	//Speed button delay.
-		//Those two are in secons.
-		'time_per_democracy' 	=>	'8',
-		'democracy_per_status'	=>  '3', //Times that a democracy round goes per status change.
+		'time_per_status' 	    =>	'15000',    //How many seconds does each status last (democracy or anarchy)
+		'democracy_per_status'	=>  '3',        //Times that a democracy round goes per status change.
 	),
 );

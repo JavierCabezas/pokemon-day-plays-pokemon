@@ -34,7 +34,7 @@ class SystemStatus extends CActiveRecord
 	}
 
 	/**
-	 *	Returns the current system.
+	 *	Returns the current system status.
 	 */
 	public function currentStatus(){
 		$criteria=new CDbCriteria;
@@ -42,6 +42,16 @@ class SystemStatus extends CActiveRecord
         $criteria->order = 'time DESC';
         return SystemStatus::model()->find($criteria)->status;
 	}
+
+    /**
+     * Returns the current system status model.
+     */
+    public function currentStatusModel(){
+        $criteria=new CDbCriteria;
+        $criteria->limit = 1;
+        $criteria->order = 'time DESC';
+        return SystemStatus::model()->find($criteria);
+    }
 
 	/**
 	 *	Returns the next system status.

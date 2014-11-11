@@ -52,6 +52,7 @@ class SiteController extends Controller
                     'ajaxUpdateCommands',
                     'ajaxChangeStatus',
                     'commands',
+                    'ajaxFinishRun'
                 ),
                 'users' => array(
                     'Javier'
@@ -118,10 +119,10 @@ class SiteController extends Controller
             if ($key_in_words == -1) return null; //Just to be sure
             Command::model()->recordKeystroke($key_in_words);
 
-            if(SystemStatus::model()->currentStatus == SystemStatus::ANARCHY) {
+            if(SystemStatus::model()->currentStatus() == SystemStatus::ANARCHY) {
                 Command::model()->press($k);
             }else{ //DEMOCRACY.
-            	
+            	Democracy::model()->saveVote($k);
             }
 		}
 	}
@@ -191,5 +192,22 @@ class SiteController extends Controller
 	public function actionAjaxChangeStatus(){
         echo SystemStatus::model()->NextSystemStatus();
 		SystemStatus::model()->changeStatus();
+    }
+
+
+    /**
+     *	Finishes a democracy round and calculates the winner key combination.
+     */
+    public function actionAjaxFinishRun(){
+        $votes = array();
+        $keys = getKeys(Yii::app()->params['active_game']);
+        foreach($keys as $key){
+            $votes[$key] = count(Democracy::model()->findAllByAttributes(array(
+                'id_system_status' => SystemStatus::model()->currentStatusModel()->id,
+                'iteration' 	   => Democracy::model()->getCurrentIteration(),
+                'keypress'		   => $key)));
+        }
+        $index_max = array_search(max($votes), $votes);
+        Command::model()->press($index_max);
     }
 }
