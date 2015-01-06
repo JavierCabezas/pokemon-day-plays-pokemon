@@ -15,7 +15,8 @@
  */
 
 ?>
-<div class="content">
+
+<div class="pad">
  	<div class="left"> 	
  		<?php echo CHtml::ajaxSubmitButton('a',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
         	  array('type'=>'POST','data'=> 'js:{"key": "z" }', 'success'=>'js:function(time){ scroll("A", "'.Yii::app()->user->name.'", time ); }' ), 
@@ -85,18 +86,38 @@
   	</div>
 </div>
 
-<script> 
-/** 
- *	Disable all buttons for an ammount of miliseconds.
- *	It also adds the "disabled" css class to the buttons to get a graphic feedback to know that the buttons are actually disabled.
- *	@param integer milliseconds the ammount of ms that the buttons are to remain disabled.
- */
-function disable(milliseconds){
-    $(".btn").attr("disabled", "disabled");
-    $(".btn").addClass("disabled");
-    setTimeout(function(){
-        $(".btn").removeAttr("disabled"); 
-        $(".btn").removeClass("disabled");
-    }, milliseconds);
-}
+<div class='commands'>
+	<ul class='scroller'>
+	</ul>
+</div>
+
+
+<script>
+
+	function actualizarComandos(){
+		$.ajax({
+			url: '<?php echo CController::createUrl("site/ajaxUpdateCommands")  ?>',
+			dataType: 'html',
+			type: 'POST',
+			'success': function (response) {
+				$(".scroller").html(response)
+			}
+		});
+	};
+
+	setInterval(actualizarComandos, 6000);
+
+	/**
+	 *	Disable all buttons for an ammount of miliseconds.
+	 *	It also adds the "disabled" css class to the buttons to get a graphic feedback to know that the buttons are actually disabled.
+	 *	@param integer milliseconds the ammount of ms that the buttons are to remain disabled.
+	 */
+	function disable(milliseconds){
+		$(".btn").attr("disabled", "disabled");
+		$(".btn").addClass("disabled");
+		setTimeout(function(){
+			$(".btn").removeAttr("disabled");
+			$(".btn").removeClass("disabled");
+		}, milliseconds);
+	}
 </script>

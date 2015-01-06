@@ -178,7 +178,6 @@ class SiteController extends Controller
 	 */
 	public function actionCommands()
 	{
-		Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/countdown.js');
 		$this->render('commands');
 	}
 
