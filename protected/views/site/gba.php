@@ -78,11 +78,6 @@
         	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
 		?>
 
-		<?php
-		echo CHtml::ajaxSubmitButton('speed',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "speed" }', 'success'=>'js:function(time){ scroll("speed", "'.Yii::app()->user->name.'", time ); }' ), 
-        	array('class'=>'btn small_btn btn_speed', 'onclick' => 'disable('.Yii::app()->params['speed_delay'].')' ));
-		?>
   	</div>
 </div>
 
