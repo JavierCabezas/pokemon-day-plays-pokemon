@@ -1,3 +1,3 @@
-<h1> ¡Gracias! </h1>
+<h1>Gracias por jugar PokémonDay Plays Pokémon</h1>
 
-<p> Gracias por haber jugado Pokémon Day Plays Pokémon. </p>
+<p>¡Hasta la próxima!</p>

@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>Ingresa tu nickname</h1>
+<h1>PokémonDay Plays Pokémon</h1>
 
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
@@ -20,7 +20,8 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p>Para poder jugar Pokémon Day Plays Pokémon tienes que ingresar un nombre de usuario.</p>
+	<p>¡Bienvenido!</p>
+	<p>Para poder jugar tienes que ingresar un nombre de usuario.</p>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'username'); ?>
@@ -30,7 +31,7 @@ $this->breadcrumbs=array(
 
 	<?php
 		$this->widget('booster.widgets.TbButton',
-			array('buttonType' => 'submit', 'label' => 'Ingresar')
+			array('buttonType' => 'submit', 'label' => 'Jugar')
 		);
 	?>
 

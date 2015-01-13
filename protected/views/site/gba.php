@@ -76,6 +76,12 @@
 		</div>
 	</div>
 
+	<div class="commands">
+		<ul class='scroller'>
+			lalalalala
+		</ul>
+	</div>
+
   	<div class="right">
 		<?php
 		echo CHtml::ajaxSubmitButton('b',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
@@ -90,10 +96,6 @@
   	</div>
 </div>
 
-<div class='commands'>
-	<ul class='scroller'>
-	</ul>
-</div>
 
 
 <script>
