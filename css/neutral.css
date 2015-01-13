@@ -1,7 +1,0 @@
-button, input[type="color"]:-moz-system-metric(color-picker-available), input[type="reset"], input[type="button"], input[type="submit"] {
-
-}
-
-input {
-	background-color: none;
-}
