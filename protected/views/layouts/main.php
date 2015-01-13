@@ -18,9 +18,9 @@
 
 <div class="container" id="page">
 
-	<div id="header">
+	<!--<div id="header">
 		<div id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></div>
-	</div><!-- header -->
+	</div>-->
 
 	<div id="mainmenu">
 		<?php $this->widget('zii.widgets.CMenu',array(
@@ -30,11 +30,11 @@
 			),
 		)); ?>
 	</div><!-- mainmenu -->
-	<?php if(isset($this->breadcrumbs)):?>
+	<!--<?php if(isset($this->breadcrumbs)):?>
 		<?php $this->widget('zii.widgets.CBreadcrumbs', array(
 			'links'=>$this->breadcrumbs,
-		)); ?><!-- breadcrumbs -->
-	<?php endif?>
+		)); ?> breadcrumbs -->
+	<!--<?php endif?>-->
 
 	<?php echo $content; ?>
 

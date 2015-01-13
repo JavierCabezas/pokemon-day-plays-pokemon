@@ -1,5 +1,4 @@
-body
-{
+body {
 	margin: 0;
 	padding: 0;
 	color: #555;
@@ -7,64 +6,53 @@ body
 	background: #EFEFEF;
 }
 
-#page
-{
-	margin-top: 5px;
-	margin-bottom: 5px;
+#page {
 	background: white;
-	border: 1px solid #C9E0ED;
 }
 
-#header
-{
+#header {
 	margin: 0;
 	padding: 0;
-	border-top: 3px solid #C9E0ED;
 }
 
-#content
-{
-    padding: 20px;
+#content {
+	padding: 0px;
+	width: 100%;
+	height: 20em;
+	background-image: url("../images/layout.png");
+	background-size: 100% auto;
+	margin: 0px;
+	margin-top: -2%;
 }
 
-#sidebar
-{
+#sidebar {
 	padding: 20px 20px 20px 0;
 }
 
-#footer
-{
-	padding: 10px;
-	margin: 10px 20px;
+#footer {
 	font-size: 0.8em;
 	text-align: center;
-	border-top: 1px solid #C9E0ED;
 }
 
-#logo
-{
+#logo {
 	padding: 10px 20px;
 	font-size: 200%;
 }
 
-#mainmenu
-{
+#mainmenu {
 	background:white url(bg.gif) repeat-x left top;
 }
 
-#mainmenu ul
-{
+#mainmenu ul {
 	padding:6px 20px 5px 20px;
 	margin:0px;
 }
 
-#mainmenu ul li
-{
+#mainmenu ul li {
 	display: inline;
 }
 
-#mainmenu ul li a
-{
+#mainmenu ul li a {
 	color:#ffffff;
 	background-color:transparent;
 	font-size:12px;
@@ -73,29 +61,29 @@ body
 	padding:5px 8px;
 }
 
-#mainmenu ul li a:hover, #mainmenu ul li.active a
-{
+#mainmenu ul li a:hover, #mainmenu ul li.active a {
 	color: #6399cd;
 	background-color:#EFF4FA;
 	text-decoration:none;
 }
 
-div.flash-error, div.flash-notice, div.flash-success
-{
+.container {
+	padding: 0 !important;
+}
+
+div.flash-error, div.flash-notice, div.flash-success {
 	padding:.8em;
 	margin-bottom:1em;
 	border:2px solid #ddd;
 }
 
-div.flash-error
-{
+div.flash-error {
 	background:#FBE3E4;
 	color:#8a1f11;
 	border-color:#FBC2C4;
 }
 
-div.flash-notice
-{
+div.flash-notice {
 	background:#FFF6BF;
 	color:#514721;
 	border-color:#FFD324;
@@ -239,22 +227,140 @@ div.search-form
   background: gray; 
 } 
 
-.left, .right { 
-  width: 40%; 
-  margin:5px; 
-  padding: 1em; 
-  background: white; 
-} 
-
-.left  { 
-	float:left;  
+.sides {
+	width: 89%;
+	height: 4em;
+	margin-left: auto;
+	margin-right: auto;
+	clear: both;
+	padding-top: 4%;
 }
-.right { 
-	float:right; 
+
+.sides #yt0, .sides #yt1 {
+	width: 20%;
+	height: 2.6em;
+	background-color: transparent;
+	background-size: 100%;
+	text-indent: -9000px;
+	background-repeat: no-repeat;
+}
+
+.sides #yt0 {
+	float: left;
+	background-image: url(../images/l.png);
+}
+
+.sides #yt1 {
+	float: right;
+	background-image: url(../images/r.png);
+}
+
+.left, .right { 
+	margin: 5px; 
+	padding: 1em; 
 } 
 
-.disabled
-{
+.left { 
+	float: left; 
+	width: 25%; 
+}
+
+.left .dpad {
+	width: 6em;
+	height: 6em;
+	margin-left: 12%;
+}
+
+.left .dpad .lfrt {
+	width: 100%;
+	clear: both;
+}
+
+.left .dpad #yt2, .left .dpad .lfrt #yt3, .left .dpad .lfrt #yt4, .left .dpad #yt5 {
+	width: 2em;
+	background-size: 100%;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-indent: -9000px;
+}
+
+.left .dpad #yt2, .left .dpad #yt5 {
+	margin-left: 31%;
+	margin-right: auto;
+	clear: both;
+	height: 2em;
+}
+
+.left .dpad #yt2 {
+	background-image: url(../images/up.png);
+}
+
+.left .dpad .lfrt #yt3 {
+	background-image: url(../images/left.png);
+	float: left;
+	height: 1.8em;
+}
+
+.left .dpad .lfrt #yt4 {
+	background-image: url(../images/right.png);
+	float: right;
+	height: 1.8em;
+}
+
+.left .dpad #yt5 {
+	background-image: url(../images/down.png);
+}
+
+.left .menu {
+	width: 25%;
+	float: right;
+	clear: both;
+	margin-top: 8%;
+}
+
+.left .menu #yt6, .left .menu #yt7 {
+	width: 2em;
+	height: 2em;
+	background-color: transparent;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	text-indent: -9000px;
+	margin-bottom: 0.2em;
+}
+
+.left .menu #yt6 {
+	background-image: url(../images/start.png);
+}
+
+.left .menu #yt7 {
+	background-image: url(../images/select.png);
+}
+
+.right {
+	width: 25%;
+	margin-top: 6%;
+	float: right;
+} 
+
+.right #yt8, .right #yt9 {
+	width: 40%;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	background-color: transparent;
+	text-indent: -9000px;
+} 
+
+.right #yt8 {
+	background-image: url(../images/b.png);
+	margin-top: 20%;
+	margin-right: 2%;
+}
+
+.right #yt9 {
+	background-image: url(../images/a.png);
+}
+
+.disabled {
 	color: red;
 }
 
