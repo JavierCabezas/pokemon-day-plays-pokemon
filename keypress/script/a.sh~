@@ -1,5 +1,4 @@
 #!/bin/bash
 export DISPLAY=":0"
 XAUTHORITY=./.Xauthority
-xdotool key w
-xdotool key w
+xdotool key aa

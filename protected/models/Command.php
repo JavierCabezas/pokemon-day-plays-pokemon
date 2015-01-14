@@ -163,9 +163,9 @@ class Command extends CActiveRecord
                 break;
         }
 
-        //$exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
-        //$output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
-        //echo $output." ";
+        $exec = Yii::getPathOfAlias('webroot').'/keypress/script/'.$args;
+        $output = shell_exec('sh '.$exec.' 2>&1'); //2>&1
+        echo $output." ";
     }
 
     /*

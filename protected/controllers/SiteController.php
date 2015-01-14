@@ -119,11 +119,11 @@ class SiteController extends Controller
             if ($key_in_words == -1) return null; //Just to be sure
             Command::model()->recordKeystroke($key_in_words);
 
-            if(SystemStatus::model()->currentStatus() == SystemStatus::ANARCHY) {
+            //if(SystemStatus::model()->currentStatus() == SystemStatus::ANARCHY) {
                 Command::model()->press($k);
-            }else{ //DEMOCRACY.
-            	Democracy::model()->saveVote($k);
-            }
+            //}else{ //DEMOCRACY.
+            //	Democracy::model()->saveVote($k);
+           // }
 		}
 	}
 	
