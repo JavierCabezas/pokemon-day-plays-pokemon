@@ -246,8 +246,8 @@ div.search-form {
 }
 
 .left .dpad {
-	width: 6em;
-	height: 6em;
+	width: 90%;
+	height: auto;
 	margin-left: 12%;
 }
 
@@ -257,7 +257,7 @@ div.search-form {
 }
 
 .left .dpad #yt2, .left .dpad .lfrt #yt3, .left .dpad .lfrt #yt4, .left .dpad #yt5 {
-	width: 2em;
+	width: 34%;
 	background-size: 100%;
 	background-color: transparent;
 	background-repeat: no-repeat;
@@ -295,17 +295,17 @@ div.search-form {
 	width: 25%;
 	float: right;
 	clear: both;
-	margin-top: 8%;
+	margin-top: 15%;
 }
 
 .left .menu #yt6, .left .menu #yt7 {
-	width: 2em;
-	height: 2em;
+	width: 100%;
+	height: 27px;
 	background-color: transparent;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	text-indent: -9000px;
-	margin-bottom: 0.2em;
+	margin-bottom: 0;
 }
 
 .left .menu #yt6 {
@@ -426,4 +426,9 @@ pre {
 	color: #000;
 	line-height: 90%;
 	font-size: 10pt;
-} 
+}
+
+.form-control {
+    width: 80% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
