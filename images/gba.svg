@@ -3,17 +3,17 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1000px"
 	 height="603.612px" viewBox="0 0 1000 603.612" enable-background="new 0 0 1000 603.612" xml:space="preserve">
-<g id="l_x5F_button">
+<g class="boton" id="l">
 	<path fill="#76797E" d="M162.482,62.706c35.38-16.977,70.519-32.656,70.519-32.656C201.905,31.377,90.43,37.525,63.317,59.462
 		c-10.667,8.63-15.507,32.266-14.042,48.877c0.404,4.58-1.609-18.339,21.309-23.793C104.862,76.388,128.987,78.778,162.482,62.706z"
 		/>
 </g>
-<g id="r_x5F_button">
+<g class="boton" id="r">
 	<path fill="#76797E" d="M844.538,62.706c-35.38-16.977-70.519-32.656-70.519-32.656c31.096,1.328,142.57,7.476,169.684,29.413
 		c10.667,8.63,15.508,32.266,14.042,48.877c-0.404,4.58,1.608-18.339-21.309-23.793C902.158,76.388,878.033,78.778,844.538,62.706z"
 		/>
 </g>
-<g id="layout_x5F_gba">
+<g id="layout_gba">
 	<g>
 		<path fill="#313C6A" d="M251.5,20.931c0,0-74.619,34.704-85.749,40.21c-55.092,27.255-106.097,9.205-114.817,39.726
 			s-72.668,354.624-8.72,382.238c63.949,27.615,169.616,60.635,193.3,69.763c56.806,21.896,382.695,48.319,489.788,13.08
@@ -6746,8 +6746,8 @@ gg==" transform="matrix(0.1938 0 0 0.1938 417.373 421.8994)">
 		</image>
 	</g>
 </g>
-<g id="a_x5F_button">
-	<g>
+<g class="boton" id="a">
+	<g> 
 		<circle fill="#A4A3B1" cx="908.131" cy="238.938" r="33.24"/>
 		<g>
 			<path fill="#76797E" d="M911.935,257.822l-0.981-7.063h-5.758l-0.868,7.063h-4.943l5.432-38.357h6.138l5.925,38.357H911.935z
@@ -6755,7 +6755,7 @@ gg==" transform="matrix(0.1938 0 0 0.1938 417.373 421.8994)">
 		</g>
 	</g>
 </g>
-<g id="b_x5F_button">
+<g class="boton" id="b">
 	<g>
 		<circle fill="#A4A3B1" cx="820.924" cy="268.977" r="33.24"/>
 		<g>
@@ -6771,38 +6771,71 @@ gg==" transform="matrix(0.1938 0 0 0.1938 417.373 421.8994)">
 		</g>
 	</g>
 </g>
-<g id="start_x5F_button">
+<g class="boton" id="start">
 	<circle fill="#8D8D99" cx="201.295" cy="385.764" r="16.31"/>
 </g>
-<g id="select_x5F_button">
+<g class="boton" id="select">
 	<circle fill="#8D8D99" cx="201.295" cy="441.179" r="16.31"/>
 </g>
-<g id="r_x5F_dpad">
+<g class="boton"  id="right">
 	<g>
 		<path fill="#A4A3B1" d="M191.805,230.125h-34.879v41.666h34.879c4.551,0,8.24-3.689,8.24-8.24v-25.186
 			C200.045,233.814,196.356,230.125,191.805,230.125z"/>
 		<polygon fill="#76797E" points="168,238.644 168,262.868 189.722,250.756 		"/>
 	</g>
 </g>
-<g id="l_x5F_dpad">
+<g class="boton" id="left">
 	<g>
 		<path fill="#A4A3B1" d="M81.35,230.125c-4.551,0-8.24,3.689-8.24,8.24v25.186c0,4.551,3.689,8.24,8.24,8.24h33.91v-41.666H81.35z"
 			/>
 		<polygon fill="#76797E" points="102,238.644 102,262.868 80.278,250.756 		"/>
 	</g>
 </g>
-<g id="u_x5F_dpad">
+<g class="boton" id="up">
 	<g>
 		<path fill="#A4A3B1" d="M156.926,197.185c0-4.551-3.689-8.24-8.24-8.24H123.5c-4.551,0-8.24,3.689-8.24,8.24v32.941h41.666
 			V197.185z"/>
 		<polygon fill="#76797E" points="147.721,219 123.497,219 135.609,197.278 		"/>
 	</g>
 </g>
-<g id="d_x5F_dpad">
+<g class="boton" id="down">
 	<g>
 		<path fill="#A4A3B1" d="M115.26,307.639c0,4.551,3.689,8.24,8.24,8.24h25.186c4.551,0,8.24-3.689,8.24-8.24v-35.848H115.26
 			V307.639z"/>
 		<polygon fill="#76797E" points="123.294,281 147.518,281 135.406,302.722 		"/>
 	</g>
 </g>
+
+	<script xlink:href="jquery.min.js"/>
+
+
+
+	<script type="text/javascript"><![CDATA[
+
+
+		function sendClickToParentDocument(evt)
+		    {
+		    	window.parent.pressKey(evt);
+		    }
+
+			$('.boton').each(function(index) {
+		    	$(this).on('click', function(event){
+		    		
+		    		sendClickToParentDocument($(this).attr("id"));
+			});
+
+		});
+
+		$('.boton').each(function(index) {
+		    	$(this).on('touchend', function(event){
+		    		sendClickToParentDocument($(this).attr("id"));
+			});	
+		});
+
+	]]>
+	</script>
+
+
+
+
 </svg>

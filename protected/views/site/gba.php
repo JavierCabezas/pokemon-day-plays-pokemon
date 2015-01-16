@@ -1,3 +1,7 @@
+<object class = "gba" data="<?php echo Yii::app()->baseUrl.'/images' ?>/gba.svg" type="image/svg+xml"></object>
+
+<div class="scroller"></div>
+
 <?php 
 /** 
  * GBA KEY -> KEYBOARD KEY
@@ -15,13 +19,31 @@
  */
 
 ?>
-
-<object class = "gba" data="<?php echo Yii::app()->baseUrl.'/images' ?>/gba.svg" type="image/svg+xml"></object>
-
-<div class="scroller">
-hikusdsa
-</div>
 <script>
+
+	function pressKey(id_key){
+		switch(id_key) {
+			case 'a': apretar= 'z'; break;
+			case 'b': apretar= 'x'; break;
+			case 'down': apretar= 'w'; break;
+			case 'up': apretar= 's'; break;
+			case 'left': apretar= 'a'; break;
+			case 'right': apretar= 'd'; break;
+			case 'start': apretar= 'm'; break;
+			case 'select': apretar= 'n'; break;
+			case 'l': apretar= 'l'; break;
+			default: apretar= 'r'; break;
+		} 
+		
+		$.ajax({
+			url: '<?php echo CController::createUrl("site/ajaxExeggcuteCommand")  ?>',
+			dataType: 'html',
+			type: 'POST',
+			data: {
+				key: apretar
+			}
+		});
+	}
 
 	function actualizarComandos(){
 		$.ajax({
@@ -35,6 +57,7 @@ hikusdsa
 	};
 
 	setInterval(actualizarComandos, 6000);
+	
 
 	/**
 	 *	Disable all buttons for an ammount of miliseconds.
