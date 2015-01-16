@@ -7,6 +7,17 @@ body {
 	background: #EFEFEF;
 }
 
+@font-face {
+    font-family: 'akzidenz-grotesk_bq_condensBd';
+    src: url('akzidenzgrotesk-boldcondalt-webfont.eot');
+    src: url('akzidenzgrotesk-boldcondalt-webfont.eot?#iefix') format('embedded-opentype'),
+         url('akzidenzgrotesk-boldcondalt-webfont.woff') format('woff'),
+         url('akzidenzgrotesk-boldcondalt-webfont.ttf') format('truetype'),
+         url('akzidenzgrotesk-boldcondalt-webfont.svg#akzidenz-grotesk_bq_condensBd') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 #page {
 	text-align: center;
 }
@@ -442,22 +453,21 @@ pre {
 }
 
 .main_info {
-	-webkit-border-radius: 1em;
-	-moz-border-radius: 1em;
-	border-radius: 1em;
 	background-color: #9FFC8F;
 	padding: 1%;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
-	-webkit-border: 0.5em solid #FF0;
-	-moz-border: 0.5em solid #FF0;
-	border: 0.5em solid #FF0;
+	border: silver 1em solid;
+	-webkit-border-image: url(../images/marco_pp.png) 21 round;
+    -moz-border-image: url(../images/marco_pp.png) 21 round;
+    border-image: url(../images/marco_pp.png) 21 round;
 }
 
 .main_info h3, .main_info h4 {
 	margin: 0;
 	color: #0F2707;
+	font-family: 'akzidenz-grotesk_bq_condensBd';
 }
 
 .gba{

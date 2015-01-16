@@ -22,10 +22,9 @@ $this->breadcrumbs=array(
 	</div>
 
 	<div class="main_info">
-			<h3>¡Bienvenido! Para jugar ingresa tu nombre de usuario.</h3>
+			<h3>Para jugar ingresa tu nombre de usuario</h3>
 
 			<div class="row">
-				<?php echo $form->labelEx($model,'username'); ?>
 				<?php echo $form->textField($model,'username', array('class'=>'form-control')); ?>
 				<?php echo $form->error($model,'username'); ?>
 			</div>

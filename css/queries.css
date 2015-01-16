@@ -4,64 +4,75 @@
 
 /* ESCRITORIO */
 @media (min-width: 1200px) {
-	.pad {
-	    height: 49em;
+	.main_img {
+		width: 48%;
+		height: 41em;
 	}
 
-	.sides {
-		height: 12em;
+	.main_info {
+		width: 95%;
 	}
 
-	.sides #yt0, .sides #yt1 {
-	    height: 6.6em;
+	.main_info h3 {
+		font-size: 36pt !important;
 	}
-
-	.left .dpad #yt2, .left .dpad #yt5 {
-	    height: 5em;
-	}
-
-	.left .dpad .lfrt #yt3, .left .dpad .lfrt #yt4 {
-	    height: 5.8em;
-	}
-
-	.left .menu {
-	    margin-top: 5%;
-	}
-
-	.left .menu #yt6, .left .menu #yt7 {
-	    height: 4.5em;
-	}
-
-	.right {
-	    width: 20%;
-	    margin-right: 4%;
-	}
-
-	.right #yt8, .right #yt9 {
-	    height: 6em;
-	}
-
-	.commands {
-		height: 23.2em;
-		margin-left: 3%;
 }
-}
+
 
 /* ESCRITORIO Y TABLET EN MODO LANDSCAPE (HORIZONTAL) */
 @media (min-width: 769px) and (max-width: 1199px) { 
+	.main_img {
+		width: 70%;
+		height: 39em;
+		margin-top: 15%;
+		margin-bottom: 15%;
+	}
 
+	.main_info {
+		width: 100%;
+	}
+
+	.main_info h3 {
+		font-size: 36pt !important;
+	}
 }
 
 
 /* TELÉFONO EN LANDSCAPE (HORIZONTAL) A TABLET EN PORTRAIT (VERTICAL) */
 @media (min-width: 481px) and (max-width: 768px) { 
+	.main_img {
+		width: 75%;
+		height: 42em;
+		margin-bottom: 4%;
+		margin-top: 4%;
+	}
 
+	.main_info {
+		width: 100%;
+	}
+
+	.main_info h3 {
+		font-size: 30pt !important;
+	}
 }
 
 
 /* TELÉFONO EN LANDSCAPE (HORIZONTAL) O MENOR */
 @media (max-width: 480px) {
-	.pad {
-		height: 20em;
+	.main_img {
+		width: 60%;
+		height: 20.5em;
+		float: left;
+	}
+
+	.main_info {
+		width: 35%;
+		float: right;
+		margin-top: 15%;
+		margin-right: 2%;
+	}
+
+	.main_info h3 {
+		font-size: 13pt !important;
 	}
 }
