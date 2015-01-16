@@ -1,0 +1,67 @@
+/***************************************************
+----- CONDICIONALES DE MEDIA QUERIES -----
+****************************************************/
+
+/* ESCRITORIO */
+@media (min-width: 1200px) {
+	.pad {
+	    height: 49em;
+	}
+
+	.sides {
+		height: 12em;
+	}
+
+	.sides #yt0, .sides #yt1 {
+	    height: 6.6em;
+	}
+
+	.left .dpad #yt2, .left .dpad #yt5 {
+	    height: 5em;
+	}
+
+	.left .dpad .lfrt #yt3, .left .dpad .lfrt #yt4 {
+	    height: 5.8em;
+	}
+
+	.left .menu {
+	    margin-top: 5%;
+	}
+
+	.left .menu #yt6, .left .menu #yt7 {
+	    height: 4.5em;
+	}
+
+	.right {
+	    width: 20%;
+	    margin-right: 4%;
+	}
+
+	.right #yt8, .right #yt9 {
+	    height: 6em;
+	}
+
+	.commands {
+		height: 23.2em;
+		margin-left: 3%;
+}
+}
+
+/* ESCRITORIO Y TABLET EN MODO LANDSCAPE (HORIZONTAL) */
+@media (min-width: 769px) and (max-width: 1199px) { 
+
+}
+
+
+/* TELÉFONO EN LANDSCAPE (HORIZONTAL) A TABLET EN PORTRAIT (VERTICAL) */
+@media (min-width: 481px) and (max-width: 768px) { 
+
+}
+
+
+/* TELÉFONO EN LANDSCAPE (HORIZONTAL) O MENOR */
+@media (max-width: 480px) {
+	.pad {
+		height: 20em;
+	}
+}

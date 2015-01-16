@@ -133,10 +133,6 @@ div.search-form {
 	background: #eee;
 }
 
-.portlet {
-
-}
-
 .portlet-decoration {
 	padding: 3px 8px;
 	background: #B7D6E7;
@@ -400,7 +396,6 @@ pre {
 
 .pad {
 	width: 100%;
-	height: 20em;
 	background-image: url("../images/layout.png");
 	background-size: 100% auto;
 }
@@ -411,6 +406,7 @@ pre {
 	margin-left: 2%;
 	float: left;
 	padding: 1%;
+	background-color: #FFF;
 }
 
 .commands ul.scroller {
