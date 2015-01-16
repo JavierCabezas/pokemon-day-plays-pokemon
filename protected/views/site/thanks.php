@@ -1,3 +1,7 @@
-<h1>Gracias por jugar PokémonDay Plays Pokémon</h1>
+<div class="main_img">
+</div>
 
-<p>¡Hasta la próxima!</p>
+<div class="main_info">
+		<h3>Gracias por jugar</h3>
+		<h4>¡Hasta la próxima!</h4>
+</div>

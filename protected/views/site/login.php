@@ -9,8 +9,6 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1>PokémonDay Plays Pokémon</h1>
-
 <div class="form">
 <?php $form=$this->beginWidget('CActiveForm', array(
 	'id'=>'login-form',
@@ -20,20 +18,24 @@ $this->breadcrumbs=array(
 	),
 )); ?>
 
-	<p>¡Bienvenido!</p>
-	<p>Para poder jugar tienes que ingresar un nombre de usuario.</p>
-
-	<div class="row">
-		<?php echo $form->labelEx($model,'username'); ?>
-		<?php echo $form->textField($model,'username', array('class'=>'form-control')); ?>
-		<?php echo $form->error($model,'username'); ?>
+	<div class="main_img">
 	</div>
 
-	<?php
-		$this->widget('booster.widgets.TbButton',
-			array('buttonType' => 'submit', 'label' => 'Jugar')
-		);
-	?>
+	<div class="main_info">
+			<h3>¡Bienvenido! Para jugar ingresa tu nombre de usuario.</h3>
 
-<?php $this->endWidget(); ?>
-</div><!-- form -->
+			<div class="row">
+				<?php echo $form->labelEx($model,'username'); ?>
+				<?php echo $form->textField($model,'username', array('class'=>'form-control')); ?>
+				<?php echo $form->error($model,'username'); ?>
+			</div>
+
+			<?php
+				$this->widget('booster.widgets.TbButton',
+					array('buttonType' => 'submit', 'label' => 'Jugar')
+				);
+			?>
+
+		<?php $this->endWidget(); ?>
+		</div><!-- form -->
+	</div>

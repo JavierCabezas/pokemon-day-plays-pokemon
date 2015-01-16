@@ -40,9 +40,9 @@
 
 	<div class="clear"></div>
 
-	<div id="footer">
+	<!--<div id="footer">
 		Pokémon Day <?php echo date('Y'); ?><br/>
-	</div><!-- footer -->
+	</div> footer -->
 
 </div><!-- page -->
 
