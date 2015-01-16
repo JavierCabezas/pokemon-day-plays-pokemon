@@ -1,0 +1,30 @@
+<script type="text/javascript"><![CDATA[
+
+	function sendClickToParentDocument(evt)
+	    {
+	        if (window.parent.abrir_modal)
+	            window.parent.abrir_modal(evt);
+	    }
+
+		$('.animal').each(function(index) {
+	    	$(this).on('click', function(event){
+	    		sendClickToParentDocument($(this).attr("id"));
+		});
+
+	});
+
+	$('.animal').each(function(index) {
+	    	$(this).on('tap', function(event){
+	    		sendClickToParentDocument($(this).attr("id"));
+		});	
+	});
+
+]]>
+</script>
+
+Para el index:
+
+            //Retorna true en caso de que el string pasado por argumento comience con el otro argumento
+            function abrir_modal(id){
+               //HACER COSAS
+            }
