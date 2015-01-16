@@ -16,88 +16,11 @@
 
 ?>
 
-<div class="pad">
-	<div class="sides">
-		<?php
-		echo CHtml::ajaxSubmitButton('L',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "l" }', 'success'=>'js:function(time){ scroll("L", "'.Yii::app()->user->name.'", time ); }' ),  
-        	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-		?>
+<object class = "gba" data="<?php echo Yii::app()->baseUrl.'/images' ?>/gba.svg" type="image/svg+xml"></object>
 
-		<?php
-		echo CHtml::ajaxSubmitButton('R',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "r" }', 'success'=>'js:function(time){ scroll("R", "'.Yii::app()->user->name.'", time ); }' ), 
-        	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-		?>
-	</div>
-
-
- 	<div class="left">
- 		<div class="dpad">
-			<?php
-			echo CHtml::ajaxSubmitButton('up',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-	        	array('type'=>'POST','data'=> 'js:{"key": "w" }', 'success'=>'js:function(time){ scroll("up", "'.Yii::app()->user->name.'", time ); }' ), 
-	        	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-			?>
-
-			<div class="lfrt">
-				<?php
-				echo CHtml::ajaxSubmitButton('left',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-		        	array('type'=>'POST','data'=> 'js:{"key": "a" }', 'success'=>'js:function(time){ scroll("left", "'.Yii::app()->user->name.'", time ); }' ), 
-		        	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-				?>
-
-				<?php
-				echo CHtml::ajaxSubmitButton('right',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-		        	array('type'=>'POST','data'=> 'js:{"key": "d" }', 'success'=>'js:function(time){ scroll("right", "'.Yii::app()->user->name.'", time ); }' ), 
-		        	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-				?>
-			</div>
-
-			<?php
-			echo CHtml::ajaxSubmitButton('down',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-	        	array('type'=>'POST','data'=> 'js:{"key": "s" }', 'success'=>'js:function(time){ scroll("down", "'.Yii::app()->user->name.'", time ); }' ), 
-	        	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-			?>
-		</div>
-
-		<div class="menu">
-			<?php
-			echo CHtml::ajaxSubmitButton('start',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-	        	array('type'=>'POST','data'=> 'js:{"key": "m" }', 'success'=>'js:function(time){ scroll("start", "'.Yii::app()->user->name.'", time ); }' ), 
-	        	array('class'=>'btn small_btn btn_start' , 'onclick' => 'disable('.Yii::app()->params['start_delay'].')' ));
-			?>
-			
-			<?php
-			echo CHtml::ajaxSubmitButton('select',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-	        	array('type'=>'POST','data'=> 'js:{"key": "n" }', 'success'=>'js:function(time){ scroll("select", "'.Yii::app()->user->name.'", time ); }' ), 
-	        	array('class'=>'btn small_btn btn_default' , 'onclick' => 'disable('.Yii::app()->params['default_delay'].')' ));
-			?>
-		</div>
-	</div>
-
-	<div class="commands">
-		<ul class='scroller'>
-			lalalalala
-		</ul>
-	</div>
-
-  	<div class="right">
-		<?php
-		echo CHtml::ajaxSubmitButton('b',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-        	array('type'=>'POST','data'=> 'js:{"key": "x" }', 'success'=>'js:function(time){ scroll("B", "'.Yii::app()->user->name.'", time ); }' ), 
-        	array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-		?>
-
- 		<?php echo CHtml::ajaxSubmitButton('a',Yii::app()->createUrl('site/ajaxExeggcuteCommand'),
-        	  array('type'=>'POST','data'=> 'js:{"key": "z" }', 'success'=>'js:function(time){ scroll("A", "'.Yii::app()->user->name.'", time ); }' ), 
-        	  array('class'=>'btn small_btn btn_main' , 'onclick' => 'disable('.Yii::app()->params['main_delay'].')' ));
-		?>
-  	</div>
+<div class="scroller">
+hikusdsa
 </div>
-
-
-
 <script>
 
 	function actualizarComandos(){

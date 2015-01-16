@@ -36,7 +36,7 @@ return array(
 			'connectionString' => 'mysql:host=localhost;dbname=pp',
 			'emulatePrepare' => true,
 			'username' => 'root',
-			'password' => ' ',
+			'password' => 'holi',
 			'charset' => 'utf8',
 		),
 		'errorHandler'=>array(
