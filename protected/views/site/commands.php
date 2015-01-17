@@ -1,5 +1,6 @@
 <div class='commands'>
-	<ul class='scroller'>
+    <h2> Últimos comandos </h2>
+	<ul class='sceroller'>
 	</ul>
 </div>
 
@@ -12,11 +13,11 @@
                 dataType: 'html',
                 type: 'POST',
                 'success': function (response) {
-                    ajaxResponse = response;
+                    $(".sceroller").html(response);
                 }
             });
         }
 
-        setInterval(actualizarComandos, 60000)
+        setInterval(actualizarComandos, 1000)
 
 </script>

@@ -185,7 +185,7 @@ class SiteController extends Controller
 	 *	Shows the view of the last commands
 	 */
 	public function actionAjaxUpdateCommands(){
-		echo $this->renderPartial('_commands', array('commands' => Command::model()->findAll(array("order" => "id DESC", "limit" => 8)), true));
+		echo $this->renderPartial('_commands', array('commands' => Command::model()->findAll(array("order" => "id DESC", "limit" => 30)), true));
 	}
 
 	public function actionAjaxChangeStatus(){
