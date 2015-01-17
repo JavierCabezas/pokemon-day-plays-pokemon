@@ -25,8 +25,8 @@
 		switch(id_key) {
 			case 'a': apretar= 'z'; break;
 			case 'b': apretar= 'x'; break;
-			case 'down': apretar= 'w'; break;
-			case 'up': apretar= 's'; break;
+			case 'down': apretar= 's'; break;
+			case 'up': apretar= 'w'; break;
 			case 'left': apretar= 'a'; break;
 			case 'right': apretar= 'd'; break;
 			case 'start': apretar= 'm'; break;
