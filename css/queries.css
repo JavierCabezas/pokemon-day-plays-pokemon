@@ -5,8 +5,10 @@
 /* ESCRITORIO */
 @media (min-width: 1200px) {
 	.main_img {
-		width: 48%;
+		width: 49%;
 		height: 41em;
+		margin-top: 1%;
+		margin-bottom: 3%;
 	}
 
 	.main_info {
@@ -22,10 +24,10 @@
 /* ESCRITORIO Y TABLET EN MODO LANDSCAPE (HORIZONTAL) */
 @media (min-width: 769px) and (max-width: 1199px) { 
 	.main_img {
-		width: 70%;
-		height: 39em;
-		margin-top: 15%;
-		margin-bottom: 15%;
+		width: 55%;
+		height: 38em;
+		margin-top: 1%;
+		margin-bottom: 1%;
 	}
 
 	.main_info {
@@ -39,7 +41,7 @@
 
 
 /* TELÉFONO EN LANDSCAPE (HORIZONTAL) A TABLET EN PORTRAIT (VERTICAL) */
-@media (min-width: 481px) and (max-width: 768px) { 
+@media (min-width: 641px) and (max-width: 768px) { 
 	.main_img {
 		width: 75%;
 		height: 42em;
@@ -58,6 +60,27 @@
 
 
 /* TELÉFONO EN LANDSCAPE (HORIZONTAL) O MENOR */
+@media (min-width: 481px) and (max-width: 640px) {
+	.main_img {
+		width: 50%;
+		height: 23em;
+		float: left;
+		margin-left: 3%;
+	}
+
+	.main_info {
+		width: 40%;
+		float: right;
+		margin-top: 15%;
+		margin-right: 2%;
+	}
+
+	.main_info h3 {
+		font-size: 13pt !important;
+	}
+}
+
+/* TELÉFONO EN LANDSCAPE (HORIZONTAL) O MENOR II */
 @media (max-width: 480px) {
 	.main_img {
 		width: 60%;

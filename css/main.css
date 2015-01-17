@@ -54,7 +54,7 @@ body {
 #mainmenu ul {
 	padding: 1px 20px 4px;
 	margin: 0px;
-	width: 55%;
+	width: 90%;
 	margin-left: auto;
 	margin-right: auto;
 	text-align: center;
@@ -453,8 +453,8 @@ pre {
 }
 
 .main_info {
-	background-color: #9FFC8F;
-	padding: 1%;
+	background-color: #C5C8C5;
+	padding: 0;
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -464,10 +464,20 @@ pre {
     border-image: url(../images/marco_pp.png) 21 round;
 }
 
+.main_info .btn-default {
+    color: #FFF !important;
+    background-color: #39865C !important;
+    border-color: #39865C !important;
+   	font-family: 'akzidenz-grotesk_bq_condensBd';
+   	font-size: 16pt;
+	padding: 2pt 20pt;
+}
+
 .main_info h3, .main_info h4 {
 	margin: 0;
-	color: #0F2707;
+	color: #171717;
 	font-family: 'akzidenz-grotesk_bq_condensBd';
+	line-height: 100%;
 }
 
 .gba{
