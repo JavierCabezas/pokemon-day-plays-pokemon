@@ -480,7 +480,17 @@ pre {
 	line-height: 100%;
 }
 
-.gba{
+.gba {
 	margin-left: 5%;
 	width: 90%;
+}
+
+.scroller {
+	padding: 1%;
+	z-index: 1000;
+	position: absolute;
+	color: #000;
+	font-weight: bold;
+	font-size: 14pt;
+	line-height: 100%;
 }

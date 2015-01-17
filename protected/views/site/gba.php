@@ -1,6 +1,6 @@
 <object class = "gba" data="<?php echo Yii::app()->baseUrl.'/images' ?>/gba.svg" type="image/svg+xml"></object>
 
-<div class="scroller"></div>
+<div class="scroller">lalala</div>
 
 <?php 
 /** 
