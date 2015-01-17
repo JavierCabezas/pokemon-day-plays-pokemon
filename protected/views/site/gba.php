@@ -58,18 +58,4 @@
 
 	setInterval(actualizarComandos, 6000);
 	
-
-	/**
-	 *	Disable all buttons for an ammount of miliseconds.
-	 *	It also adds the "disabled" css class to the buttons to get a graphic feedback to know that the buttons are actually disabled.
-	 *	@param integer milliseconds the ammount of ms that the buttons are to remain disabled.
-	 */
-	function disable(milliseconds){
-		$(".btn").attr("disabled", "disabled");
-		$(".btn").addClass("disabled");
-		setTimeout(function(){
-			$(".btn").removeAttr("disabled");
-			$(".btn").removeClass("disabled");
-		}, milliseconds);
-	}
 </script>

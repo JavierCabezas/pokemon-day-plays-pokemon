@@ -6806,21 +6806,71 @@ gg==" transform="matrix(0.1938 0 0 0.1938 417.373 421.8994)">
 	</g>
 </g>
 
+	<style type="text/css"> <![CDATA[
+		.disabled {
+			opacity: 0;
+		}
+		.enabled{
+			opacity: 100%;
+		}
+
+	]]></style>
+
 	<script xlink:href="jquery.min.js"/>
-
-
 
 	<script type="text/javascript"><![CDATA[
 
+		habilitado = true;
+
+		function disable(milliseconds){
+			$("#start").attr( "class" , 'disabled')
+			$("#a").attr( "class" , 'disabled')
+			$("#b").attr( "class" , 'disabled')
+			$("#select").attr( "class" , 'disabled')
+			$("#up").attr( "class" , 'disabled')
+			$("#down").attr( "class" , 'disabled')
+			$("#left").attr( "class" , 'disabled')
+			$("#right").attr( "class" , 'disabled')
+			$("#l").attr( "class" , 'disabled')
+			$("#r").attr( "class" , 'disabled')
+
+			habilitado = false;
+			setTimeout(function(){
+				habilitado = true;
+				$("#start").removeAttr( "class" , 'disabled')
+				$("#a").removeAttr( "class" , 'disabled')
+				$("#b").removeAttr( "class" , 'disabled')
+				$("#select").removeAttr( "class" , 'disabled')
+				$("#up").removeAttr( "class" , 'disabled')
+				$("#down").removeAttr( "class" , 'disabled')
+				$("#left").removeAttr( "class" , 'disabled')
+				$("#right").removeAttr( "class" , 'disabled')
+				$("#l").removeAttr( "class" , 'disabled')
+				$("#r").removeAttr( "class" , 'disabled')
+			}, milliseconds);
+		}
 
 		function sendClickToParentDocument(evt)
 		    {
-		    	window.parent.pressKey(evt);
+		    	if(habilitado){
+			    	window.parent.pressKey(evt);
+			    	switch(evt) {
+						case 'a': 
+						case 'b': 
+						case 'down': 
+						case 'up': 
+						case 'left': 
+						case 'right': ms = 1000; break;
+						case 'start': ms = 5000; break;
+						case 'select': ms = 10000; break;
+						default: ms = 2000; break;
+					} 
+					disable(ms);
+				}
 		    }
 
 			$('.boton').each(function(index) {
-		    	$(this).on('click', function(event){
-		    		
+		    	$(this).on('click', function(event){		    		
 		    		sendClickToParentDocument($(this).attr("id"));
 			});
 
