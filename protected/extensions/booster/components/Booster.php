@@ -338,8 +338,8 @@ class Booster extends CApplicationComponent {
 		$this->registerPackage('bootstrap.js');
         $this->registerPackage('bootstrap-noconflict');
 
-		if ($this->enableBootboxJS)
-			$this->registerPackage('bootbox');
+		//if ($this->enableBootboxJS)
+		//	$this->registerPackage('bootbox');
 
 		if ($this->enableNotifierJS)
 			$this->registerPackage('notify');
